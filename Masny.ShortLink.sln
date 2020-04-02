@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.Web", "Masny.Web\Masny.Web.csproj", "{7394E74B-0576-46CD-85A8-99DD5568CF71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.Web", "src\Masny.Web\Masny.Web.csproj", "{7394E74B-0576-46CD-85A8-99DD5568CF71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{166D3630-1945-44BA-8FBF-02CE8C9258A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7394E74B-0576-46CD-85A8-99DD5568CF71} = {166D3630-1945-44BA-8FBF-02CE8C9258A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9A43E09-BD71-41DC-85CB-1575BBBBD32B}
