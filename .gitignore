@@ -351,3 +351,4 @@ MigrationBackup/
 
 # Secret files
 AppSettings.cs
+src/Masny.Web/.config/dotnet-tools.json
