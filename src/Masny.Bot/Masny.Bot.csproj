@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>f914631e-3c40-4808-9120-8e412a490b46</UserSecretsId>
+    <UserSecretsId>fb926161-5b19-4762-aed6-a6d39ffa636e</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Masny.Logic\Masny.Logic.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 
