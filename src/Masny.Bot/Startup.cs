@@ -1,50 +1,42 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Masny.Bot.Extensions;
+using Masny.Bot.Interfaces;
+using Masny.Bot.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace Masny.Bot
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddScoped<ICommandService, CommandService>();
+            services.AddTelegramBotClient(_configuration);
+            services.AddControllers()
+                    .AddNewtonsoftJson(options =>
+                    {
+                        options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                        options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                    });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-
+            app.UseDeveloperExceptionPage();
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
