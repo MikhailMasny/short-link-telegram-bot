@@ -350,5 +350,5 @@ MigrationBackup/
 .ionide/
 
 # Secret files
-AppSettings.cs
-src/Masny.Web/.config/dotnet-tools.json
+src/Masny.Bot/appsettings.json
+src/Masny.Bot/.config/dotnet-tools.json
