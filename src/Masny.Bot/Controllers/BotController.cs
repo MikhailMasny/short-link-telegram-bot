@@ -1,4 +1,5 @@
 ﻿using Masny.Bot.Interfaces;
+using Masny.Bot.Resources;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -39,7 +40,8 @@ namespace Masny.Bot.Controllers
             }
 
             var message = update.Message;
-            Console.WriteLine($"ChatId: {message.Chat.Id}, Text:{message.Text}");
+
+            Console.WriteLine(string.Format(Common.Message, message.Chat.Id, message.Text));
 
             foreach (var command in _commandService.Get())
             {

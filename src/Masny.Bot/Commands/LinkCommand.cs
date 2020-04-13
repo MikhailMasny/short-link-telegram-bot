@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Masny.Bot.Resources;
+using System;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
@@ -10,7 +11,7 @@ namespace Masny.Bot.Commands
     public class LinkCommand : ITelegramCommand
     {
         /// <inheritdoc/>
-        public string Name { get; } = "/link";
+        public string Name { get; } = Link.Link;
 
         /// <inheritdoc/>
         public async Task Execute(Message message, ITelegramBotClient client)
@@ -20,11 +21,11 @@ namespace Masny.Bot.Commands
             try
             {
                 var link = await @is.gd.Url.GetShortenedUrl(message.Text);
-                text = $"\U0001F525 Keep a simplified link: {link}";
+                text = string.Format(Link.Message, link);
             }
             catch (Exception ex)
             {
-                text = "Hmm.. This is not a link, try sending something else! \U0001F4A9";
+                text = Link.Exception;
                 Console.WriteLine(ex.Message);
             }
             finally
