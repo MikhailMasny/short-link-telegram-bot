@@ -19,6 +19,7 @@ namespace Masny.Bot
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHealthChecks();
             services.AddScoped<ICommandService, CommandService>();
             services.AddTelegramBotClient(_configuration);
             services.AddControllers()
@@ -37,6 +38,7 @@ namespace Masny.Bot
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapHealthChecks("/health");
             });
         }
     }

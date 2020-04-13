@@ -5,10 +5,6 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-// TODO:
-// Внедрить health api
-// Добавить файлы ресурсов
-
 namespace Masny.Bot.Controllers
 {
     [ApiController]
@@ -28,15 +24,6 @@ namespace Masny.Bot.Controllers
         {
             _commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
             _telegramBotClient = telegramBotClient ?? throw new ArgumentNullException(nameof(telegramBotClient));
-        }
-
-        /// <summary>
-        /// Check application health.
-        /// </summary>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok("Started");
         }
 
         /// <summary>
