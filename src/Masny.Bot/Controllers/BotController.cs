@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
+// TODO:
+// Внедрить health api
+// Добавить файлы ресурсов
+
 namespace Masny.Bot.Controllers
 {
     [ApiController]
@@ -49,33 +53,15 @@ namespace Masny.Bot.Controllers
 
             var message = update.Message;
             Console.WriteLine($"ChatId: {message.Chat.Id}, Text:{message.Text}");
-            string shortendUrl = string.Empty;
 
-            try
+            foreach (var command in _commandService.Get())
             {
-                var link = await @is.gd.Url.GetShortenedUrl(message.Text);
-                shortendUrl = $"Держи свою ссылку: {link}";
+                if (command.Contains(message))
+                {
+                    await command.Execute(message, _telegramBotClient);
+                    break;
+                }
             }
-            catch (Exception ex)
-            {
-                shortendUrl = "Хмм.. По-моему это не ссылка, я не умею такое конвертировать..";
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, shortendUrl);
-            }
-
-            //foreach (var command in _commandService.Get())
-            //{
-            //    Console.WriteLine(message.Type);
-
-            //    if (command.Contains(message))
-            //    {
-            //        await command.Execute(message, _telegramBotClient);
-            //        break;
-            //    }
-            //}
 
             return Ok();
         }

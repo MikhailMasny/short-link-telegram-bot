@@ -4,18 +4,25 @@ using System.Collections.Generic;
 
 namespace Masny.Bot.Services
 {
+    /// <inheritdoc cref="ICommandService"/>
     public class CommandService : ICommandService
     {
-        private readonly List<TelegramCommand> _commands;
+        private readonly IEnumerable<ITelegramCommand> _commands;
 
+        /// <summary>
+        /// Base constructor.
+        /// </summary>
         public CommandService()
         {
-            _commands = new List<TelegramCommand>
+            _commands = new List<ITelegramCommand>
             {
-                new HelpCommand()
+                new StartCommand(),
+                new AboutCommand(),
+                new LinkCommand()
             };
         }
 
-        public List<TelegramCommand> Get() => _commands;
+        /// <inheritdoc/>
+        public IEnumerable<ITelegramCommand> Get() => _commands;
     }
 }

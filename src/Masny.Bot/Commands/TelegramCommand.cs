@@ -4,12 +4,28 @@ using Telegram.Bot.Types;
 
 namespace Masny.Bot.Commands
 {
-    public abstract class TelegramCommand
+    /// <summary>
+    /// Telegram command.
+    /// </summary>
+    public interface ITelegramCommand
     {
-        public abstract string Name { get; }
+        /// <summary>
+        /// Name.
+        /// </summary>
+        string Name { get; }
 
-        public abstract Task Execute(Message message, ITelegramBotClient client);
+        /// <summary>
+        /// Execute command.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <param name="client">TelegramBot client interface.</param>
+        Task Execute(Message message, ITelegramBotClient client);
 
-        public abstract bool Contains(Message message);
+        /// <summary>
+        /// Find a command.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <returns>Operation result.</returns>
+        bool Contains(Message message);
     }
 }

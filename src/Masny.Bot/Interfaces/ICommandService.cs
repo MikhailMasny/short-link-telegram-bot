@@ -9,9 +9,9 @@ namespace Masny.Bot.Interfaces
     public interface ICommandService
     {
         /// <summary>
-        /// 
+        /// Get all available commands.
         /// </summary>
-        /// <returns></returns>
-        List<TelegramCommand> Get();
+        /// <returns>Command list.</returns>
+        IEnumerable<ITelegramCommand> Get();
     }
 }
