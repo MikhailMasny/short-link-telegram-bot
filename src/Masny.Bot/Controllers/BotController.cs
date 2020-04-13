@@ -13,28 +13,58 @@ namespace Masny.Bot.Controllers
     {
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ICommandService _commandService;
-        public BotController(ICommandService commandService, ITelegramBotClient telegramBotClient)
+
+        /// <summary>
+        /// Constructor with parameters.
+        /// </summary>
+        /// <param name="commandService">Interface to use the command service.</param>
+        /// <param name="telegramBotClient">Interface to use the Telegram Bot API.</param>
+        public BotController(ICommandService commandService,
+                             ITelegramBotClient telegramBotClient)
         {
-            _commandService = commandService;
-            _telegramBotClient = telegramBotClient;
+            _commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
+            _telegramBotClient = telegramBotClient ?? throw new ArgumentNullException(nameof(telegramBotClient));
         }
 
+        /// <summary>
+        /// Check application health.
+        /// </summary>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok("Started");
         }
 
+        /// <summary>
+        /// Request processing method.
+        /// </summary>
+        /// <param name="update">Incoming update.</param>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Update update)
         {
-            if (update == null) return Ok();
+            if (update == null)
+            {
+                return NoContent();
+            }
 
             var message = update.Message;
-            Console.WriteLine(message.Text);
+            Console.WriteLine($"ChatId: {message.Chat.Id}, Text:{message.Text}");
+            string shortendUrl = string.Empty;
 
-            var chatId = message.Chat.Id;
-            await _telegramBotClient.SendTextMessageAsync(chatId, "\U0001F4D6 Помощь");
+            try
+            {
+                var link = await @is.gd.Url.GetShortenedUrl(message.Text);
+                shortendUrl = $"Держи свою ссылку: {link}";
+            }
+            catch (Exception ex)
+            {
+                shortendUrl = "Хмм.. По-моему это не ссылка, я не умею такое конвертировать..";
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, shortendUrl);
+            }
 
             //foreach (var command in _commandService.Get())
             //{
