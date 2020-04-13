@@ -11,7 +11,7 @@ namespace Masny.Bot.Commands
     public class LinkCommand : ITelegramCommand
     {
         /// <inheritdoc/>
-        public string Name { get; } = Link.Link;
+        public string Name { get; } = Link.Text;
 
         /// <inheritdoc/>
         public async Task Execute(Message message, ITelegramBotClient client)

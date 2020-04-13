@@ -70,20 +70,20 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /link.
-        /// </summary>
-        public static string Link {
-            get {
-                return ResourceManager.GetString("Link", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to \U0001F525 Keep a simplified link: {0}.
         /// </summary>
         public static string Message {
             get {
                 return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /link.
+        /// </summary>
+        public static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
             }
         }
     }
