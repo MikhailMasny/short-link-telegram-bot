@@ -121,6 +121,6 @@
     <value>/start</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>Welcome! This telegram bot allows you to shorten the link you entered, just send it here. For details about the project, enter: /about. Have a nice day! \U0001F369</value>
+    <value>Welcome! This telegram bot allows you to shorten the link you entered, just send it here. For details about the project, enter: /about. Have a nice day!</value>
   </data>
 </root>

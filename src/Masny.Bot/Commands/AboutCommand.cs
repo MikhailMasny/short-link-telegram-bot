@@ -16,7 +16,7 @@ namespace Masny.Bot.Commands
         public async Task Execute(Message message, ITelegramBotClient client)
         {
             var chatId = message.Chat.Id;
-            await client.SendTextMessageAsync(chatId, About.Message);
+            await client.SendTextMessageAsync(chatId, $"\U0001F389 {About.Message} \U0001F448");
         }
 
         /// <inheritdoc/>

@@ -21,11 +21,11 @@ namespace Masny.Bot.Commands
             try
             {
                 var link = await @is.gd.Url.GetShortenedUrl(message.Text);
-                text = string.Format(Link.Message, link);
+                text = string.Format($"\U0001F525 {Link.Message}", link);
             }
             catch (Exception ex)
             {
-                text = Link.Exception;
+                text = $"{Link.Exception} \U0001F4A9";
                 Console.WriteLine(ex.Message);
             }
             finally

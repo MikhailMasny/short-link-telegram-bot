@@ -70,7 +70,7 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \U0001F389 This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV \U0001F448.
+        ///   Looks up a localized string similar to This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV.
         /// </summary>
         public static string Message {
             get {

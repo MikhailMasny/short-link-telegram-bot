@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Exception" xml:space="preserve">
-    <value>Hmm.. This is not a link, try sending something else! \U0001F4A9</value>
+    <value>Hmm.. This is not a link, try sending something else!</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>\U0001F525 Keep a simplified link: {0}</value>
+    <value>Keep a simplified link: {0}</value>
   </data>
   <data name="Text" xml:space="preserve">
     <value>/link</value>

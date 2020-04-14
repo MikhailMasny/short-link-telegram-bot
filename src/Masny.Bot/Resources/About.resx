@@ -121,6 +121,6 @@
     <value>/about</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>\U0001F389 This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV \U0001F448</value>
+    <value>This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV</value>
   </data>
 </root>

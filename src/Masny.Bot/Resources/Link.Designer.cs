@@ -61,7 +61,7 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hmm.. This is not a link, try sending something else! \U0001F4A9.
+        ///   Looks up a localized string similar to Hmm.. This is not a link, try sending something else!.
         /// </summary>
         public static string Exception {
             get {
@@ -70,7 +70,7 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \U0001F525 Keep a simplified link: {0}.
+        ///   Looks up a localized string similar to Keep a simplified link: {0}.
         /// </summary>
         public static string Message {
             get {

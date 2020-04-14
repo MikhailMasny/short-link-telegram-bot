@@ -70,7 +70,7 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome! This telegram bot allows you to shorten the link you entered, just send it here. For details about the project, enter: /about. Have a nice day! \U0001F369.
+        ///   Looks up a localized string similar to Welcome! This telegram bot allows you to shorten the link you entered, just send it here. For details about the project, enter: /about. Have a nice day!.
         /// </summary>
         public static string Message {
             get {
