@@ -121,6 +121,9 @@
     <value>/about</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV</value>
+    <value>This is open source project. See details here:</value>
+  </data>
+  <data name="ShortLink" xml:space="preserve">
+    <value>https://is.gd/7VsAoV</value>
   </data>
 </root>

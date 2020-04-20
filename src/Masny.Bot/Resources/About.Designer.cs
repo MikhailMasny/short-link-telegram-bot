@@ -70,11 +70,20 @@ namespace Masny.Bot.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is open source project. See details here: \U0001F449 https://is.gd/7VsAoV.
+        ///   Looks up a localized string similar to This is open source project. See details here:.
         /// </summary>
         public static string Message {
             get {
                 return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://is.gd/7VsAoV.
+        /// </summary>
+        public static string ShortLink {
+            get {
+                return ResourceManager.GetString("ShortLink", resourceCulture);
             }
         }
     }
