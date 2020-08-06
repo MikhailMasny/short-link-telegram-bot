@@ -1,4 +1,5 @@
-﻿using Masny.Bot.Resources;
+﻿using Masny.Bot.Interfaces;
+using Masny.Bot.Resources;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
@@ -20,6 +21,6 @@ namespace Masny.Bot.Commands
         }
 
         /// <inheritdoc/>
-        public bool Contains(Message message) => message.Type != MessageType.Text ? false : message.Text.Contains(Name);
+        public bool Contains(Message message) => message.Type == MessageType.Text && message.Text.Contains(Name);
     }
 }

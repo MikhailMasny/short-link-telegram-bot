@@ -2,7 +2,7 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace Masny.Bot.Commands
+namespace Masny.Bot.Interfaces
 {
     /// <summary>
     /// Telegram command.

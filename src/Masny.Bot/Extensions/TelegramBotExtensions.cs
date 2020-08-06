@@ -21,7 +21,6 @@ namespace Masny.Bot.Extensions
             serviceCollection.AddTransient<ITelegramBotClient>(x => client);
 
             return serviceCollection;
-                
         }
     }
 }

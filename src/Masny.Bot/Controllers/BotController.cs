@@ -32,7 +32,7 @@ namespace Masny.Bot.Controllers
         /// </summary>
         /// <param name="update">Incoming update.</param>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Update update)
+        public async Task<IActionResult> Post([FromBody] Update update)
         {
             if (update == null)
             {
