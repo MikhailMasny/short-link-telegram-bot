@@ -1,6 +1,6 @@
 # LinkShortener [Telegram Bot]
 
-![.NET Core](https://github.com/MikhailMasny/short-link-telegram-bot/workflows/.NET%20Core/badge.svg)
+[![.NET](https://github.com/MikhailMasny/short-link-telegram-bot/actions/workflows/dotnetcore.yml/badge.svg)](https://github.com/MikhailMasny/short-link-telegram-bot/actions/workflows/dotnetcore.yml)
 
 The main idea of the web application is to develop a telegram bot for quickly create a short link. This repository can also serve as a template for creating a specific bot with its subsequent publication on the Internet.
 
