@@ -5,6 +5,15 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.Bot", "src\Masny.Bot\Masny.Bot.csproj", "{DA290F2B-4C9B-4350-BCB9-FD0A6E1AFFC4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{03432ACD-6BEC-4D31-BCDF-35246FF57289}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

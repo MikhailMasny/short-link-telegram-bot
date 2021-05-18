@@ -20,8 +20,9 @@ namespace Masny.Bot.Controllers
         /// </summary>
         /// <param name="commandService">Interface to use the command service.</param>
         /// <param name="telegramBotClient">Interface to use the Telegram Bot API.</param>
-        public BotController(ICommandService commandService,
-                             ITelegramBotClient telegramBotClient)
+        public BotController(
+            ICommandService commandService,
+            ITelegramBotClient telegramBotClient)
         {
             _commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
             _telegramBotClient = telegramBotClient ?? throw new ArgumentNullException(nameof(telegramBotClient));
@@ -41,7 +42,12 @@ namespace Masny.Bot.Controllers
 
             var message = update.Message;
 
-            Console.WriteLine(string.Format(Common.Message, message.Chat.Id, message.Text));
+            // (!) NOTICE: Use this code only for debug
+            Console.WriteLine(
+                string.Format(
+                    Common.Message,
+                    message.Chat.Id,
+                    message.Text));
 
             foreach (var command in _commandService.Get())
             {

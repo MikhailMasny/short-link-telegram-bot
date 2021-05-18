@@ -23,8 +23,7 @@ namespace Masny.Bot
             services.AddScoped<ICommandService, CommandService>();
             services.AddTelegramBotClient(_configuration);
             services.AddControllers()
-                    .AddNewtonsoftJson(options =>
-                    {
+                    .AddNewtonsoftJson(options => {
                         options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
                         options.SerializerSettings.ContractResolver = new DefaultContractResolver();
                     });
@@ -35,8 +34,7 @@ namespace Masny.Bot
             app.UseDeveloperExceptionPage();
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
+            app.UseEndpoints(endpoints => {
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapHealthChecks("/health");
             });

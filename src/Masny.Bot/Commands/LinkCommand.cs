@@ -36,6 +36,7 @@ namespace Masny.Bot.Commands
         }
 
         /// <inheritdoc/>
-        public bool Contains(Message message) => message.Type == MessageType.Text;
+        public bool Contains(Message message) =>
+            message.Type == MessageType.Text;
     }
 }

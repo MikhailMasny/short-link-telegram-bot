@@ -14,13 +14,13 @@ namespace Masny.Bot.Commands
         public string Name { get; } = About.Link;
 
         /// <inheritdoc/>
-        public async Task Execute(Message message, ITelegramBotClient client)
-        {
-            var chatId = message.Chat.Id;
-            await client.SendTextMessageAsync(chatId, $"\U0001F389 {About.Message} \U0001F449 {About.ShortLink} \U0001F448");
-        }
+        public async Task Execute(Message message, ITelegramBotClient client) =>
+            await client.SendTextMessageAsync(
+                message.Chat.Id,
+                $"\U0001F389 {About.Message} \U0001F449 {About.ShortLink} \U0001F448");
 
         /// <inheritdoc/>
-        public bool Contains(Message message) => message.Type == MessageType.Text && message.Text.Contains(Name);
+        public bool Contains(Message message) =>
+            message.Type == MessageType.Text && message.Text.Contains(Name);
     }
 }
