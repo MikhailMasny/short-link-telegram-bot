@@ -32,8 +32,10 @@ For the correct functioning of Telegram Bot, it is necessary to update the [apps
 To start the entire infrastructure, you must run the following commands from the project folder:
 
 ```
+heroku login 
 docker build -t short-link-generator-bot .
 docker tag short-link-generator-bot registry.heroku.com/short-link-generator-bot/web
+heroku container:login
 heroku container:push web -a short-link-generator-bot
 heroku container:release web -a short-link-generator-bot
 ```
